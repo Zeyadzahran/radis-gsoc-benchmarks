@@ -9,3 +9,11 @@ pyarrow>=14.0
 tables>=3.8            # PyTables backend for pandas.to_hdf / read_hdf
 psutil>=5.9
 matplotlib>=3.7
+dask>=2024.1           # Lazy dataframe engine with task graphs
+duckdb>=0.10           # In-process SQL OLAP database with lazy evaluation
+
+# --- Vaex (INCOMPATIBLE with Python 3.12+) ---
+# Vaex uses the deprecated `imp` module removed in Python 3.12
+# To benchmark Vaex, use Python ≤3.11 (e.g., via Docker)
+# This incompatibility is why we need to replace Vaex in RADIS
+# vaex                   # Uncomment only if using Python ≤3.11
